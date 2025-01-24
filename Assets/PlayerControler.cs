@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public static float RestrictAngle(float angle, float angleMin, float angleMax)
+    public static float RestrictAngle(float angle, float angleMin, float angleMax) //definit l'angle maximum et l'angle minimum et s'assure qu'ils ne sont pas depasses
     {
         if (angle > 180)
             angle -= 360;
@@ -19,10 +19,10 @@ public class PlayerControler : MonoBehaviour
         return angle;
     }
 
+    [Header("References")]
+    public Transform head; //tete du personnage, a attribuer a la cameraa
 
-    public Transform head;
-
-    void Start()
+    void Start() //bloque le curseur
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -31,6 +31,7 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
+        Cursor.visible = false;
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f);
     }
 
