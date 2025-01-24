@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public static float RestrictAngle(float angle, float angleMin, float angleMax)
+    public static float RestrictAngle(float angle, float angleMin, float angleMax) //parametre la verification et la remise a niveau des maximums et minimums de l'angle de camera
     {
         if (angle > 180)
             angle -= 360;
@@ -19,32 +19,25 @@ public class PlayerControler : MonoBehaviour
         return angle;
     }
 
-    [SerializeField] private float _sensetivity = 10;
-    private float _xRotation;
-    private Vector2 _playerMouseInput;
+    public Transform head; //gameobject representant la tete du joueur
 
-    public Transform head;
-
-void Start()
-{
-    Cursor.visible = false;
-    Cursor.lockState = CursorLockMode.Locked;
-}
+    void Start()
+    {
+        Cursor.visible = false; //cache le curseur
+        Cursor.lockState = CursorLockMode.Locked; //bloque le curseur au centre de l'ecran
+    }
 
 
-void Update()
-{
-    transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f); //permet de tourner son champ de vision autour de soi
+    void Update()
+    {
+        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f); //tourne la camera sur l'axe horizontal
+    }
 
-    _xRotation -= _playerMouseInput.y * _sensetivity;
-    _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
-}
-
-private void LateUpdate()
-{
-    Vector3 e = head.eulerAngles;
-    e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
-    e.x = RestrictAngle(e.x, -85f, 85f);
-    head.eulerAngles = e;
-}
+    private void LateUpdate()
+    {
+        Vector3 e = head.eulerAngles;
+        e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
+        e.x = RestrictAngle(e.x, -85f, 85f); //bloque la rotation de la camera
+        head.eulerAngles = e; //tourne la camera sur l'axe vertical
+    }
 }

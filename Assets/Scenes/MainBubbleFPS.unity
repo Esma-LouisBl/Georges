@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 428013902}
   - component: {fileID: 428013903}
   m_Layer: 0
-  m_Name: WeaponOffset
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1816403271}
-  - {fileID: 712677436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &428013903
@@ -440,7 +439,7 @@ GameObject:
   - component: {fileID: 712677434}
   - component: {fileID: 712677433}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerHitzone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,11 +525,11 @@ Transform:
   m_GameObject: {fileID: 712677432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.066000015, y: -0.51100004, z: -0.14800002}
+  m_LocalPosition: {x: -0.388, y: 1.702, z: -0.10100002}
   m_LocalScale: {x: 0.69214, y: 1, z: 0.53422}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 428013902}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713051809
 GameObject:
@@ -1398,4 +1397,5 @@ SceneRoots:
   - {fileID: 65425901}
   - {fileID: 713051815}
   - {fileID: 1948340674}
+  - {fileID: 712677436}
   - {fileID: 428013902}
