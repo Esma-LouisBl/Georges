@@ -19,26 +19,32 @@ public class PlayerControler : MonoBehaviour
         return angle;
     }
 
+    [SerializeField] private float _sensetivity = 10;
+    private float _xRotation;
+    private Vector2 _playerMouseInput;
 
     public Transform head;
 
-    void Start()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+void Start()
+{
+    Cursor.visible = false;
+    Cursor.lockState = CursorLockMode.Locked;
+}
 
 
-    void Update()
-    {
-        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f);
-    }
+void Update()
+{
+    transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f); //permet de tourner son champ de vision autour de soi
 
-    private void LateUpdate()
-    {
-        Vector3 e = head.eulerAngles;
-        e.x -= Input.GetAxis("Mouse Y") * 2f;
-        e.x = RestrictAngle(e.x, -85f, 85f);
-        head.eulerAngles = e;
-    }
+    _xRotation -= _playerMouseInput.y * _sensetivity;
+    _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+}
+
+private void LateUpdate()
+{
+    Vector3 e = head.eulerAngles;
+    e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
+    e.x = RestrictAngle(e.x, -85f, 85f);
+    head.eulerAngles = e;
+}
 }
