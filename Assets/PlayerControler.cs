@@ -22,7 +22,7 @@ public class PlayerControler : MonoBehaviour
     {
         Vector3 e = head.eulerAngles;
         e.x -= Input.GetAxis("Mouse Y") * 2f;
-        e.x = RestrictAngle(e.x, -85f, 85f);
+        //e.x = RestrictAngle(e.x, -85f, 85f);
         head.eulerAngles = e;
     }
 }
