@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 428013902}
   - component: {fileID: 428013903}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,8 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d9fc8046499694781fb4d75e7c20a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensetivity: 10
   head: {fileID: 1816403271}
+  _player: {fileID: 712677432}
 --- !u!1 &712677432
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 712677434}
   - component: {fileID: 712677433}
   m_Layer: 0
-  m_Name: PlayerHitzone
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

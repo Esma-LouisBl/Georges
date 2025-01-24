@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class CameraControler : MonoBehaviour
 {
     public static float RestrictAngle(float angle, float angleMin, float angleMax) //parametre la verification et la remise a niveau des maximums et minimums de l'angle de camera
     {
@@ -21,6 +21,10 @@ public class PlayerControler : MonoBehaviour
 
     public Transform head; //gameobject representant la tete du joueur
 
+    [SerializeField]
+    private GameObject _player;
+
+
     void Start()
     {
         Cursor.visible = false; //cache le curseur
@@ -35,6 +39,8 @@ public class PlayerControler : MonoBehaviour
 
     private void LateUpdate()
     {
+        gameObject.transform.localPosition = _player.transform.localPosition;
+
         Vector3 e = head.eulerAngles;
         e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
         e.x = RestrictAngle(e.x, -85f, 85f); //bloque la rotation de la camera
