@@ -396,6 +396,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 6846214020616556441, guid: 7499b5121b0f1d3448b3fbb543609e06,
     type: 3}
   LaunchOffset: {fileID: 1508961440}
+  _delay: 0.1
 --- !u!1 &288198641
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 712677432}
-  playerHead: {fileID: 0}
   spawner: {fileID: 1948340674}
 --- !u!1 &789815443
 GameObject:
