@@ -38,14 +38,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggernEnter(Collider other)
     {
-        if (collision.gameObject == point1)
+        if (other.gameObject == point1)
         {
             _goForward = false;
         }
 
-        if (collision.gameObject == point2)
+        if (other.gameObject == point2)
         {
             _goForward = true;
         }
