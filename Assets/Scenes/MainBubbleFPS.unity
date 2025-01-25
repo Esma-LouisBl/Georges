@@ -1367,6 +1367,7 @@ GameObject:
   - component: {fileID: 712677437}
   - component: {fileID: 712677438}
   - component: {fileID: 712677439}
+  - component: {fileID: 712677440}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1527,6 +1528,20 @@ MonoBehaviour:
   knockbackDuration: 0.4
   _invincibilityTime: 1
   spawner: {fileID: 1948340674}
+--- !u!114 &712677440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712677432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c742a42753d5e146b067a1bedf5da65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 699685024}
+  _playerShoot: {fileID: 541839158}
 --- !u!1 &713679147
 GameObject:
   m_ObjectHideFlags: 0

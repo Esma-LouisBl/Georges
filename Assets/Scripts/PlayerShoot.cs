@@ -42,10 +42,10 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q)) // RACCOURCI A SUPPRIMER
-        {
-            ChangeWeaponToRifle();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q)) // RACCOURCI A SUPPRIMER
+        //{
+        //    ChangeWeaponToRifle();
+        //}
     }
 
     public void ChangeWeaponToRifle()
