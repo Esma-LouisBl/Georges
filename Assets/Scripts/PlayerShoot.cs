@@ -15,9 +15,12 @@ public class PlayerShoot : MonoBehaviour
 
     private int _charger = 500, i = 10;
 
+    [SerializeField]
+    private GameObject _toy, _riffle;
+
     void Start()
     {
-
+        _riffle.SetActive(false);
     }
 
     void Update()
@@ -45,6 +48,8 @@ public class PlayerShoot : MonoBehaviour
 
     public void ChangeWeaponToRifle()
     {
+        _toy.SetActive(false);
+        _riffle.SetActive(true);
         _weapon = 2;
     }
 
