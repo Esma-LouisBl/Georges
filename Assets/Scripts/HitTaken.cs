@@ -21,9 +21,9 @@ public class HitTaken : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
             characterController.enabled = false;
             player.transform.position = spawner.transform.position;
