@@ -841,6 +841,7 @@ GameObject:
   - component: {fileID: 911967043}
   - component: {fileID: 911967042}
   - component: {fileID: 911967046}
+  - component: {fileID: 911967047}
   m_Layer: 0
   m_Name: Georges
   m_TagString: Enemy
@@ -975,10 +976,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 911967042}
   _speed: 3
+  _lives: 3
   point1: {fileID: 1425010671}
   point2: {fileID: 288198641}
   point3: {fileID: 2063968725}
   point4: {fileID: 1164282290}
+--- !u!114 &911967047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911967039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ef7a87f6e821e48addb50da0a7ff91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 911967046}
 --- !u!1 &1164282290
 GameObject:
   m_ObjectHideFlags: 0

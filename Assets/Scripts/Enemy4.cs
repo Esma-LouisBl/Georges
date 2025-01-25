@@ -10,6 +10,9 @@ public class Enemy4 : MonoBehaviour
     [SerializeField]
     private float _speed = 3;
 
+    [SerializeField]
+    private int _lives = 3;
+
     private bool _goForward = true;
     private bool _goBack = false;
     private bool _goLeft = false;
@@ -69,6 +72,17 @@ public class Enemy4 : MonoBehaviour
         {
             _goLeft = false;
             _goForward = true;
+        }
+    }
+    public void Touched()
+    {
+        if (_lives > 1)
+        {
+            _lives--;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
