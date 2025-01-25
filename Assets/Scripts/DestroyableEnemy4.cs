@@ -7,13 +7,13 @@ public class DestroyableEnemy4 : MonoBehaviour
     [SerializeField]
     private Enemy4 _enemy;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Bubble"))
+        if (other.gameObject.CompareTag("Bubble"))
         {
             _enemy.Touched();
 
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

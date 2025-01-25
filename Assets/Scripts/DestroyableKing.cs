@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyableEnemyBridge : MonoBehaviour
+public class DestroyableKing : MonoBehaviour
 {
     [SerializeField]
-    private EnemyBridge _enemy;
+    private EnemyKing _enemy;
 
     private void OnTriggerEnter(Collider other)
     {
