@@ -13,7 +13,7 @@ public class ProjectilesBehavior : MonoBehaviour
     }
     void Update()
     {
-        transform.position += ((-transform.right * Time.deltaTime * _speed) + new Vector3(0,Random.Range(-0.01f,0.01f), Random.Range(-0.01f, 0.01f)));
+        transform.position += ((-transform.right * Time.deltaTime * _speed) + new Vector3(Random.Range(-0.02f, 0.02f), Random.Range(-0.01f,0.01f), 0));
     }
 
     private void OnCollisionEnter2D(Collision2D collision) // ?marche pas T-T
