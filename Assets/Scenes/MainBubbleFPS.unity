@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 214209274}
   - component: {fileID: 214209278}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Riffle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,6 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 6846214020616556441, guid: 7499b5121b0f1d3448b3fbb543609e06,
     type: 3}
   LaunchOffset: {fileID: 1508961440}
-  _delay: 0.1
 --- !u!1 &288198641
 GameObject:
   m_ObjectHideFlags: 0
