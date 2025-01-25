@@ -76,6 +76,8 @@ public class HitTaken : MonoBehaviour
                     characterController.enabled = true;
 
                     playerManager.hp = playerManager.maxhp;
+
+                    _hpImage.sprite = _hpMax;
                 }
 
                 StartCoroutine(Invincibility());
