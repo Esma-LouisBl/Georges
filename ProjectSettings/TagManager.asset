@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Projectile
   - Bubble
+  - ReloadZone
   layers:
   - Default
   - TransparentFX
