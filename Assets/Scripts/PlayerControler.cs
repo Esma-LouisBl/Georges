@@ -19,7 +19,8 @@ public class PlayerControler : MonoBehaviour
     private float rotationX = 0;
     private CharacterController characterController;
 
-    private bool canMove = true;
+    private bool _canMove = true;
+    private bool _reloading = false;
 
     [SerializeField]
     private PlayerShoot _playershoot;
@@ -35,12 +36,12 @@ public class PlayerControler : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = _canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
+        float curSpeedY = _canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && _canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
         }
@@ -54,7 +55,7 @@ public class PlayerControler : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && canMove)
+        if (Input.GetKey(KeyCode.LeftControl) && _canMove)
         {
             characterController.height = crouchHeight;
             walkSpeed = crouchSpeed;
@@ -70,7 +71,7 @@ public class PlayerControler : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
+        if (_canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -79,11 +80,29 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    private IEnumerator Reload()
+    {
+        if (_reloading)
+        {
+            _playershoot.FillCharger();
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(Reload());
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ReloadZone"))
         {
-            _playershoot.FillCharger();
+            _reloading = true;
+            StartCoroutine(Reload());
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("ReloadZone"))
+        {
+            _reloading = false;
         }
     }
 }
