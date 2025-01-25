@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyBridge : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody _rb;
@@ -19,10 +19,13 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private Mission _mission;
+
+    [SerializeField]
+    private GameObject _bridge;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _bridge.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,6 +64,8 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             _mission.tutoGeorges = false;
+
+            _bridge.SetActive(true);
         }
     }
 }
