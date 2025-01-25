@@ -309,7 +309,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208397000
 MonoBehaviour:
@@ -358,14 +358,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1664,6 +1664,7 @@ GameObject:
   - component: {fileID: 1212157780}
   - component: {fileID: 1212157782}
   - component: {fileID: 1212157781}
+  - component: {fileID: 1212157783}
   m_Layer: 5
   m_Name: FrameMission
   m_TagString: Untagged
@@ -1729,6 +1730,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212157779}
   m_CullTransparentMesh: 1
+--- !u!114 &1212157783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212157779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dd755c1375e4f41b21d3164d1ef327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textMission: {fileID: 208397000}
+  _frame: {fileID: 1212157781}
+  tutoGeorges: 1
 --- !u!1 &1284270398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,6 +2280,7 @@ MonoBehaviour:
   _lives: 3
   point1: {fileID: 1690859465}
   point2: {fileID: 1527052472}
+  _mission: {fileID: 1212157783}
 --- !u!114 &1568630638
 MonoBehaviour:
   m_ObjectHideFlags: 0
