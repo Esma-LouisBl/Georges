@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBridge : MonoBehaviour
+public class EnemyBridge : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _bridge;
-    [SerializeField]
-    private Enemy _enemy;
-
-
     [SerializeField]
     private Rigidbody _rb;
 
@@ -25,6 +19,9 @@ public class TriggerBridge : MonoBehaviour
 
     [SerializeField]
     private Mission _mission;
+
+    [SerializeField]
+    private GameObject _bridge;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,13 +33,14 @@ public class TriggerBridge : MonoBehaviour
     {
         if (_goForward)
         {
-            _rb.velocity = Vector3.forward * _speed;
+            _rb.velocity = transform.TransformDirection(Vector3.forward) * _speed;
         }
         else
         {
-            _rb.velocity = Vector3.back * _speed;
+            _rb.velocity = transform.TransformDirection(Vector3.back) * _speed;
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == point1)
@@ -54,17 +52,20 @@ public class TriggerBridge : MonoBehaviour
         {
             _goForward = true;
         }
-        //if (collision.gameObject.CompareTag("Bubble"))
-        //{
-        //    Debug.Log("skibidi");
-        //    _bridge.SetActive(true);
-        //    Destroy(collision.gameObject);
-        //}
-        if (collision.gameObject.CompareTag("Bubble"))
-        {
-            _enemy.Touched();
+    }
 
-            Destroy(collision.gameObject);
+    public void Touched()
+    {
+        if (_lives > 1)
+        {
+            _lives--;
+        }
+        else
+        {
+            Destroy(gameObject);
+            _mission.tutoGeorges = false;
+
+            _bridge.SetActive(true);
         }
     }
 }

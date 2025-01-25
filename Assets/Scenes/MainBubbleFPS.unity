@@ -2998,8 +2998,8 @@ GameObject:
   - component: {fileID: 1452454221}
   - component: {fileID: 1452454220}
   - component: {fileID: 1452454219}
-  - component: {fileID: 1452454218}
-  - component: {fileID: 1452454217}
+  - component: {fileID: 1452454223}
+  - component: {fileID: 1452454224}
   m_Layer: 0
   m_Name: Georges
   m_TagString: Untagged
@@ -3023,37 +3023,6 @@ Transform:
   - {fileID: 763911720}
   m_Father: {fileID: 1349150285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452454217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452454215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d83b2e0cd72084448afead5be8f8387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: {fileID: 1452454218}
---- !u!114 &1452454218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452454215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a8172a774d88f4c8b9d0a723081825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rb: {fileID: 1452454219}
-  _speed: 3
-  _lives: 3
-  point1: {fileID: 1065123554}
-  point2: {fileID: 338109417}
-  _mission: {fileID: 1212157783}
 --- !u!54 &1452454219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3152,6 +3121,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452454215}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1452454223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452454215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce7eb0dc3e52314798ceead21ab40c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 1452454219}
+  _speed: 3
+  _lives: 3
+  point1: {fileID: 1065123554}
+  point2: {fileID: 338109417}
+  _mission: {fileID: 1212157783}
+  _bridge: {fileID: 713679147}
+--- !u!114 &1452454224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452454215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa943bf08b2f94348a238478907e7167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 1452454223}
 --- !u!1 &1457277484
 GameObject:
   m_ObjectHideFlags: 0
