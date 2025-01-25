@@ -1509,6 +1509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1568630632}
   _speed: 3
+  _lives: 3
   point1: {fileID: 1690859465}
   point2: {fileID: 1527052472}
 --- !u!114 &1568630638
@@ -1523,7 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d83b2e0cd72084448afead5be8f8387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameObject: {fileID: 1568630631}
+  _enemy: {fileID: 1568630637}
 --- !u!1 &1690859465
 GameObject:
   m_ObjectHideFlags: 0

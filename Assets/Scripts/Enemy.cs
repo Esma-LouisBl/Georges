@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float _speed = 3;
 
+    [SerializeField]
+    private int _lives = 3;
+
     private bool _goForward = true;
     public GameObject point1;
     public GameObject point2;
@@ -42,6 +45,18 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject == point2)
         {
             _goForward = true;
+        }
+    }
+
+    public void Touched()
+    {
+        if (_lives > 1)
+        {
+            _lives--;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Destroyable : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _gameObject;
+    private Enemy _enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bubble"))
         {
-            Destroy(_gameObject);
+            _enemy.Touched();
         }
     }
 }
