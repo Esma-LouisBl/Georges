@@ -81,6 +81,10 @@ public class HitTaken : MonoBehaviour
                 StartCoroutine(Invincibility());
             }
         }
+        else if (other.CompareTag("Respawn"))
+        {
+            spawner = other.transform;
+        }
     }
 
     IEnumerator Invincibility()
