@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
+
 {
-    [SerializeField]
-    private GameObject _chocWave;
-    private Transform _initialChocWave;
-    private int i = 6, j = 20;
+    private int i = 6;
+    public ChocWave WavePrefab;
+
+    public Transform SpawnOffset;
 
     void Start()
     {
-        _initialChocWave = gameObject.transform;
         StartCoroutine(Jump());
     }
 
@@ -51,17 +51,6 @@ public class BossController : MonoBehaviour
         }
         i = 6;
         StartCoroutine(Jump());
-        StartCoroutine(ChocWave());
-    }
-
-    private IEnumerator ChocWave()
-    {
-        _chocWave.transform.localScale = _initialChocWave.localScale;
-        while (j > 0)
-        {
-            _chocWave.transform.localScale += new Vector3 (0.5f, 0, 0.5f);
-            yield return new WaitForSeconds(0.1f);
-            j -= 1;
-        }
+        Instantiate(WavePrefab, SpawnOffset.position, SpawnOffset.rotation);
     }
 }
