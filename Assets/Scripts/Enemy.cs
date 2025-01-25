@@ -30,11 +30,11 @@ public class Enemy : MonoBehaviour
     {
         if (_goForward)
         {
-            _rb.velocity = Vector3.forward * _speed;
+            _rb.velocity = transform.TransformDirection(Vector3.forward) * _speed;
         }
         else
         {
-            _rb.velocity = Vector3.back * _speed;
+            _rb.velocity = transform.TransformDirection(Vector3.back) * _speed;
         }
     }
 
