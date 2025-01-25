@@ -84,7 +84,6 @@ public class PlayerControler : MonoBehaviour
         if (other.gameObject.CompareTag("ReloadZone"))
         {
             _playershoot.FillCharger();
-            Debug.Log("Teemo");
         }
     }
 }
