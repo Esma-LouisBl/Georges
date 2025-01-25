@@ -13,7 +13,9 @@ public class PlayerShoot : MonoBehaviour
 
     private bool _canFire = true;
 
-    private int _charger = 500, i = 10;
+    public int charger = 500;
+        
+    private int i = 10;
 
     [SerializeField]
     private GameObject _toy, _riffle;
@@ -27,7 +29,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            if (_canFire == true && _charger > 0)
+            if (_canFire == true && charger > 0)
             {
                 _canFire = false;
                 if (_weapon == 2)
@@ -55,12 +57,12 @@ public class PlayerShoot : MonoBehaviour
 
     public void FillCharger()
     {
-        _charger = 500;
+        charger = 500;
     }
 
     void FireAt()
     {
-        _charger -= 5; //vitesse à laquelle le chargeur descend
+        charger -= 5; //vitesse à laquelle le chargeur descend
         Quaternion target = Quaternion.Euler(0, 0, 0);
         transform.localRotation = Quaternion.identity;
         Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation); //cree le projectile au bout de l'arme

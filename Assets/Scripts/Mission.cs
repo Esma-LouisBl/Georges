@@ -15,7 +15,7 @@ public class Mission : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _frame.enabled = true;
     }
 
     // Update is called once per frame
@@ -27,7 +27,8 @@ public class Mission : MonoBehaviour
         }
         else
         {
-            _textMission.text = "prout";
+            _textMission.text = "";
+            _frame.enabled = false;
         }
     }
 }
