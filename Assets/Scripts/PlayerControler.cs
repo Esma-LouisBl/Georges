@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 3f;
+    public float runSpeed = 6f;
     public float jumpPower = 7f;
     public float gravity = 10f;
     public float lookSpeed = 2f;
@@ -53,7 +53,7 @@ public class PlayerControler : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.R) && canMove)
+        if (Input.GetKey(KeyCode.LeftControl) && canMove)
         {
             characterController.height = crouchHeight;
             walkSpeed = crouchSpeed;
@@ -63,8 +63,8 @@ public class PlayerControler : MonoBehaviour
         else
         {
             characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
+            walkSpeed = 3f;
+            runSpeed = 6f;
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
@@ -78,6 +78,3 @@ public class PlayerControler : MonoBehaviour
         }
     }
 }
-
-
-//270 : 0x 1z
