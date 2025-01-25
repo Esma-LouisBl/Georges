@@ -32,6 +32,7 @@ public class CameraControler : MonoBehaviour
     [SerializeField]
     public bool _isGrounded = false;
     private Vector3 lastPosition;
+    private int i = 0;
 
 
     void Start()
@@ -83,18 +84,26 @@ public class CameraControler : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.1f);
             if (_isWalking)
             {
                 if (_handsUp)
                 {
-                    _camera.transform.position += new Vector3(0, 0.1f, 0);
-                    _handsUp = false;
+                    if (i > 0)
+                    {
+                        _camera.transform.position += new Vector3(0, 0.02f, 0);
+                        _handsUp = false;
+                        i -= 1;
+                    }
                 }
                 else
                 {
-                    _camera.transform.position += new Vector3(0, -0.1f, 0);
-                    _handsUp = true;
+                    if (i < 20)
+                    {
+                        _camera.transform.position += new Vector3(0, -0.02f, 0);
+                        _handsUp = true;
+                        i += 1;
+                    }
                 }
             }
         }
