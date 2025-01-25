@@ -718,6 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254375754}
   - component: {fileID: 254375755}
+  - component: {fileID: 254375756}
   m_Layer: 5
   m_Name: BubbleBar
   m_TagString: Untagged
@@ -732,7 +733,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254375753}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -741,7 +742,7 @@ RectTransform:
   - {fileID: 546387598}
   - {fileID: 1030220446}
   m_Father: {fileID: 745419246}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -420, y: -157}
@@ -798,6 +799,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &254375756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254375753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4455b99ebb775d140b009e162fd0c976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerShoot: {fileID: 541839158}
+  _gauge: {fileID: 254375755}
 --- !u!1 &288198641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1259,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 6846214020616556441, guid: 7499b5121b0f1d3448b3fbb543609e06,
     type: 3}
   LaunchOffset: {fileID: 1508961440}
+  charger: 500
   _toy: {fileID: 973439855}
   _riffle: {fileID: 214209272}
 --- !u!1 &546387597
