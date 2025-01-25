@@ -824,6 +824,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 712677432}
+  knockbackForce: 6
+  knockbackDuration: 0.4
   spawner: {fileID: 1948340674}
 --- !u!1 &789815443
 GameObject:
