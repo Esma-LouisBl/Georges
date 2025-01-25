@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HitTaken : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class HitTaken : MonoBehaviour
     private PlayerManager playerManager;
 
     public GameObject player;
+
+    [SerializeField]
+    private Image _hpImage;
+    [SerializeField]
+    private Sprite _hpMax, _hp2, _hp1, _dead;
 
     public float knockbackForce = 5f;
     public float knockbackDuration = 0.2f;
@@ -25,6 +31,7 @@ public class HitTaken : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        _hpImage.sprite = _hpMax;
     }
 
     // Update is called once per frame
@@ -52,6 +59,15 @@ public class HitTaken : MonoBehaviour
                     knockbackTimer = knockbackDuration;
 
                     playerManager.hp--;
+
+                    if (playerManager.hp == 2)
+                    {
+                        _hpImage.sprite = _hp2;
+                    }
+                    else if (playerManager.hp == 1)
+                    {
+                        _hpImage.sprite = _hp1;
+                    }
                 }
                 else
                 {
