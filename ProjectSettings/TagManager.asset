@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Point1
+  - Point2
   - Enemy
-  - Bubble
+  - Projectile
   layers:
   - Default
   - TransparentFX
