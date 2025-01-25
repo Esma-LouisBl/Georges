@@ -13,6 +13,11 @@ public class HitTaken : MonoBehaviour
     public float knockbackDuration = 0.2f;
     private Vector3 knockbackDirection;
     private float knockbackTimer = 0f;
+
+    private bool _invincible = false;
+    [SerializeField]
+    private int _invincibilityTime = 3;
+
     public Transform spawner;
 
     private CharacterController characterController;
@@ -37,22 +42,36 @@ public class HitTaken : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            if (playerManager.hp > 1)
+            if (!_invincible)
             {
-                knockbackDirection = (player.transform.position - other.transform.position).normalized;
 
-                knockbackTimer = knockbackDuration;
+                if (playerManager.hp > 1)
+                {
+                    knockbackDirection = (player.transform.position - other.transform.position).normalized;
 
-                playerManager.hp--;
-            }
-            else
-            {
-                characterController.enabled = false;
-                player.transform.position = spawner.transform.position;
-                characterController.enabled = true;
+                    knockbackTimer = knockbackDuration;
 
-                playerManager.hp = playerManager.maxhp;
+                    playerManager.hp--;
+                }
+                else
+                {
+                    characterController.enabled = false;
+                    player.transform.position = spawner.transform.position;
+                    characterController.enabled = true;
+
+                    playerManager.hp = playerManager.maxhp;
+                }
+
+                StartCoroutine(Invincibility());
             }
         }
     }
+
+    IEnumerator Invincibility()
+    {
+        _invincible = true;
+        yield return new WaitForSeconds(_invincibilityTime);
+        _invincible = false;
+    }
+
 }

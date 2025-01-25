@@ -827,6 +827,7 @@ MonoBehaviour:
   player: {fileID: 712677432}
   knockbackForce: 6
   knockbackDuration: 0.4
+  _invincibilityTime: 1
   spawner: {fileID: 1948340674}
 --- !u!1 &789815443
 GameObject:
