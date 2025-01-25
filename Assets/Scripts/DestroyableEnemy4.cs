@@ -23,6 +23,8 @@ public class DestroyableEnemy4 : MonoBehaviour
         if (collision.gameObject.CompareTag("Bubble"))
         {
             _enemy.Touched();
+
+            Destroy(collision.gameObject);
         }
     }
 }
