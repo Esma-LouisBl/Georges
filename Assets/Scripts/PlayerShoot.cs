@@ -57,7 +57,15 @@ public class PlayerShoot : MonoBehaviour
 
     public void FillCharger()
     {
-        charger = 500;
+        StartCoroutine(FillingCharger());
+    }
+    public IEnumerator FillingCharger()
+    {
+        if (charger < 500)
+        {
+            charger += 25;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     void FireAt()
