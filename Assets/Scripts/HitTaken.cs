@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class HitTaken : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerManager playerManager;
+
     public GameObject player;
-    private Rigidbody _rb;
 
     public float knockbackForce = 5f;
     public float knockbackDuration = 0.2f;
@@ -35,14 +37,22 @@ public class HitTaken : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            knockbackDirection = (player.transform.position - other.transform.position).normalized;
+            if (playerManager.hp > 1)
+            {
+                knockbackDirection = (player.transform.position - other.transform.position).normalized;
 
-            // Initialise le timer pour appliquer le knockback
-            knockbackTimer = knockbackDuration;
+                knockbackTimer = knockbackDuration;
 
-            //characterController.enabled = false;
-            //player.transform.position = spawner.transform.position;
-            //characterController.enabled = true;
+                playerManager.hp--;
+            }
+            else
+            {
+                characterController.enabled = false;
+                player.transform.position = spawner.transform.position;
+                characterController.enabled = true;
+
+                playerManager.hp = playerManager.maxhp;
+            }
         }
     }
 }
