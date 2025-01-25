@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class SpoiledMechanic : MonoBehaviour
 {
-    [SerializeField]
-    private Enemy _enemy;
-
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Te");
         if (collision.gameObject.CompareTag("Bubble"))
         {
-            _enemy.Touched();
-
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            //Destroy(collision.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Ti");
+        if (other.gameObject.CompareTag("Bubble"))
+        {
+            Destroy(gameObject);
+            //Destroy(collision.gameObject);
         }
     }
 }
