@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraControler : MonoBehaviour
@@ -28,6 +29,9 @@ public class CameraControler : MonoBehaviour
 
     private bool _isWalking = false;
     private bool _handsUp = false;
+    [SerializeField]
+    public bool _isGrounded = false;
+    private Vector3 lastPosition;
 
 
     void Start()
@@ -37,22 +41,42 @@ public class CameraControler : MonoBehaviour
 
         //_isWalking = true;
         StartCoroutine(Shaking());
+        lastPosition = gameObject.transform.localPosition;
     }
 
 
     void Update()
     {
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 2f); //tourne la camera sur l'axe horizontal
+
+        if (lastPosition != gameObject.transform.localPosition && _isGrounded)
+        {
+            _isWalking = true;
+        }
+        else
+        {
+            _isWalking = false;
+        }
+        lastPosition = transform.localPosition;
+
+        if (gameObject.transform.localPosition.y > 3)
+        {
+            _isGrounded = false;
+        }
+        else
+        {
+            _isGrounded = true;
+        }
     }
 
     private void LateUpdate()
     {
         gameObject.transform.localPosition = _player.transform.localPosition;
 
-        Vector3 e = head.eulerAngles;
-        e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
-        e.x = RestrictAngle(e.x, -85f, 85f); //bloque la rotation de la camera
-        head.eulerAngles = e; //tourne la camera sur l'axe vertical
+        //Vector3 e = head.eulerAngles;
+        //e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
+        //e.x = RestrictAngle(e.x, -85f, 85f); //bloque la rotation de la camera
+        //head.eulerAngles = e; //tourne la camera sur l'axe vertical
     }
 
     private IEnumerator Shaking() //rajouter les conditions grounded

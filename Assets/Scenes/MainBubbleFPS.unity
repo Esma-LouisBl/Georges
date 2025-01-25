@@ -532,6 +532,7 @@ MonoBehaviour:
   head: {fileID: 1816403271}
   _player: {fileID: 712677432}
   _camera: {fileID: 1816403270}
+  _isGrounded: 0
 --- !u!1 &712677432
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +658,7 @@ MonoBehaviour:
   jumpPower: 7
   gravity: 10
   lookSpeed: 2
-  lookXLimit: 45
+  lookXLimit: 60
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
