@@ -37,7 +37,6 @@ public class CameraControler : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false; //cache le curseur
         Cursor.lockState = CursorLockMode.Locked; //bloque le curseur au centre de l'ecran
 
         //_isWalking = true;
@@ -73,11 +72,6 @@ public class CameraControler : MonoBehaviour
     private void LateUpdate()
     {
         gameObject.transform.localPosition = _player.transform.localPosition;
-
-        //Vector3 e = head.eulerAngles;
-        //e.x -= Input.GetAxis("Mouse Y") * 2f; //2f : represente la vitesse a laquelle la camera monte
-        //e.x = RestrictAngle(e.x, -85f, 85f); //bloque la rotation de la camera
-        //head.eulerAngles = e; //tourne la camera sur l'axe vertical
     }
 
     private IEnumerator Shaking() //rajouter les conditions grounded
