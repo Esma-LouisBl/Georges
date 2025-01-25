@@ -87,6 +87,16 @@ public class HitTaken : MonoBehaviour
         {
             spawner = other.transform;
         }
+        else if (other.CompareTag("KillZone"))
+        {
+            characterController.enabled = false;
+            player.transform.position = spawner.transform.position;
+            characterController.enabled = true;
+
+            playerManager.hp = playerManager.maxhp;
+
+            _hpImage.sprite = _hpMax;
+        }
     }
 
     IEnumerator Invincibility()
