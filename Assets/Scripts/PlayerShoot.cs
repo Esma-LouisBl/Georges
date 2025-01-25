@@ -53,6 +53,11 @@ public class PlayerShoot : MonoBehaviour
         _weapon = 2;
     }
 
+    public void FillCharger()
+    {
+        _charger = 500;
+    }
+
     void FireAt()
     {
         _charger -= 5; //vitesse à laquelle le chargeur descend

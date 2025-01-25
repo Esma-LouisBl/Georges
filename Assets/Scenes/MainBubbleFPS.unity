@@ -925,6 +925,7 @@ MonoBehaviour:
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
+  _playershoot: {fileID: 541839158}
 --- !u!143 &712677438
 CharacterController:
   m_ObjectHideFlags: 0

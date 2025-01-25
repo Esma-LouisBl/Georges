@@ -21,6 +21,9 @@ public class PlayerControler : MonoBehaviour
 
     private bool canMove = true;
 
+    [SerializeField]
+    private PlayerShoot _playershoot;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -73,6 +76,15 @@ public class PlayerControler : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ReloadZone"))
+        {
+            _playershoot.FillCharger();
+            Debug.Log("Teemo");
         }
     }
 }
