@@ -719,7 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 712677432}
-  playerHead: {fileID: 0}
   spawner: {fileID: 1948340674}
 --- !u!1 &789815443
 GameObject:
@@ -1375,6 +1374,7 @@ GameObject:
   - component: {fileID: 1568630633}
   - component: {fileID: 1568630632}
   - component: {fileID: 1568630637}
+  - component: {fileID: 1568630638}
   m_Layer: 0
   m_Name: Georges
   m_TagString: Enemy
@@ -1511,6 +1511,19 @@ MonoBehaviour:
   _speed: 3
   point1: {fileID: 1690859465}
   point2: {fileID: 1527052472}
+--- !u!114 &1568630638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568630631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d83b2e0cd72084448afead5be8f8387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObject: {fileID: 1568630631}
 --- !u!1 &1690859465
 GameObject:
   m_ObjectHideFlags: 0
