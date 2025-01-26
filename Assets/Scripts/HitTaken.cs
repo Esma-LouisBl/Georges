@@ -8,6 +8,9 @@ public class HitTaken : MonoBehaviour
     [SerializeField]
     private PlayerManager playerManager;
 
+    [SerializeField]
+    private EnemyKing _enemyKing;
+
     public GameObject player;
 
     [SerializeField]
@@ -77,6 +80,8 @@ public class HitTaken : MonoBehaviour
                     playerManager.hp = playerManager.maxhp;
 
                     _hpImage.sprite = _hpMax;
+
+                    _enemyKing.lives = 100;
                 }
 
                 StartCoroutine(Invincibility());
@@ -110,6 +115,8 @@ public class HitTaken : MonoBehaviour
                 playerManager.hp = playerManager.maxhp;
 
                 _hpImage.sprite = _hpMax;
+
+                _enemyKing.lives = 100;
             }
             StartCoroutine(Invincibility());
         }
@@ -126,6 +133,8 @@ public class HitTaken : MonoBehaviour
             playerManager.hp = playerManager.maxhp;
 
             _hpImage.sprite = _hpMax;
+
+            _enemyKing.lives = 100;
         }
     }
 
