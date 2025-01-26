@@ -7728,6 +7728,9 @@ MonoBehaviour:
   _ui: {fileID: 777897823}
   _enemyKing: {fileID: 1426080688}
   _area: {fileID: 334696656}
+  _audioSource: {fileID: 1816403275}
+  _mainTheme: {fileID: 8300000, guid: 0a91e673561f4a843aa1f69388ab39c5, type: 3}
+  _bossTheme: {fileID: 0}
 --- !u!65 &334696656
 BoxCollider:
   m_ObjectHideFlags: 0

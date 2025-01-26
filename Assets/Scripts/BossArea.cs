@@ -10,9 +10,15 @@ public class BossArea : MonoBehaviour
     private EnemyKing _enemyKing;
     [SerializeField]
     private BoxCollider _area;
+
+    [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip _mainTheme, _bossTheme;
     void Start()
     {
         _ui.SetActive(false);
+        _audioSource.clip = _mainTheme;
     }
 
     void Update()
@@ -28,6 +34,7 @@ public class BossArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _ui.SetActive(true);
+            _audioSource.clip = _bossTheme;
         }
     }
 
@@ -36,6 +43,7 @@ public class BossArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _ui.SetActive(false);
+            _audioSource.clip = _mainTheme;
         }
     }
 }
