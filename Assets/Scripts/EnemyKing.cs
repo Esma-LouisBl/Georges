@@ -9,6 +9,9 @@ public class EnemyKing : MonoBehaviour
 
     public int lives = 75;
 
+    [SerializeField]
+    private SceneSwitch _sceneSwitch;
+
 
     public void Touched()
     {
@@ -19,6 +22,7 @@ public class EnemyKing : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            _sceneSwitch.ChangeScene("TheEnd");
         }
     }
 }
