@@ -22,6 +22,9 @@ public class EnemyBridge : MonoBehaviour
 
     [SerializeField]
     private GameObject _bridge;
+
+    [SerializeField]
+    private GameObject _george;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,11 +49,13 @@ public class EnemyBridge : MonoBehaviour
         if (collision.gameObject == point1)
         {
             _goForward = false;
+            _george.transform.Rotate(new Vector3(0, 180, 0), Space.World);
         }
 
         if (collision.gameObject == point2)
         {
             _goForward = true;
+            _george.transform.Rotate(new Vector3(0, 180, 0), Space.World);
         }
     }
 
