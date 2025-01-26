@@ -33,6 +33,8 @@ public class BossArea : MonoBehaviour
         {
             _ui.SetActive(true);
             _audioSource.clip = _bossTheme;
+            _audioSource.volume = 1;
+            _audioSource.Play();
         }
     }
 
@@ -42,6 +44,8 @@ public class BossArea : MonoBehaviour
         {
             _ui.SetActive(false);
             _audioSource.clip = _mainTheme;
+            _audioSource.volume = 0.3f;
+            _audioSource.Play();
         }
     }
 }

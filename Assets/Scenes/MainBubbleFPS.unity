@@ -7730,7 +7730,7 @@ MonoBehaviour:
   _area: {fileID: 334696656}
   _audioSource: {fileID: 1816403275}
   _mainTheme: {fileID: 8300000, guid: 0a91e673561f4a843aa1f69388ab39c5, type: 3}
-  _bossTheme: {fileID: 0}
+  _bossTheme: {fileID: 8300000, guid: 652e85fe4a0f9cc40b97278da8cc0ccb, type: 3}
 --- !u!65 &334696656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13650,7 +13650,7 @@ Transform:
   m_GameObject: {fileID: 712677432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.23, y: -35.82, z: -56.85}
+  m_LocalPosition: {x: -11.86, y: -35.82, z: -56.12}
   m_LocalScale: {x: 0.69214, y: 1, z: 0.53422}
   m_ConstrainProportionsScale: 0
   m_Children: []
