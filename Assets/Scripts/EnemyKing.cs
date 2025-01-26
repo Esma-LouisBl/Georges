@@ -7,8 +7,7 @@ public class EnemyKing : MonoBehaviour
     [SerializeField]
     private Rigidbody _rb;
 
-    [SerializeField]
-    public int lives = 3;
+    public int lives = 100;
 
 
     public void Touched()
