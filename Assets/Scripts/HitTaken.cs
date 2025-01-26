@@ -82,6 +82,37 @@ public class HitTaken : MonoBehaviour
                 StartCoroutine(Invincibility());
             }
         }
+        else if (other.CompareTag("Wave"))
+        {
+            if (playerManager.hp > 1)
+            {
+                knockbackDirection = ((player.transform.position - other.transform.position)*2).normalized;
+
+                knockbackTimer = knockbackDuration;
+
+                playerManager.hp--;
+
+                if (playerManager.hp == 2)
+                {
+                    _hpImage.sprite = _hp2;
+                }
+                else if (playerManager.hp == 1)
+                {
+                    _hpImage.sprite = _hp1;
+                }
+            }
+            else
+            {
+                characterController.enabled = false;
+                player.transform.position = spawner.transform.position;
+                characterController.enabled = true;
+
+                playerManager.hp = playerManager.maxhp;
+
+                _hpImage.sprite = _hpMax;
+            }
+            StartCoroutine(Invincibility());
+        }
         else if (other.CompareTag("Respawn"))
         {
             spawner = other.transform;

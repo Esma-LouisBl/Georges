@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6382642372162068411}
   - component: {fileID: 4605918706715864232}
   - component: {fileID: 8015422206477335229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChocWave
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7781706067338770555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 1.15, z: 0.0000001391}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -20, y: 2, z: 0.0000001391}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,10 +113,10 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: e50c2ce05176d5f4dbb1fb3d6d7ef22b, type: 3}

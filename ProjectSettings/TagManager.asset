@@ -9,6 +9,7 @@ TagManager:
   - Bubble
   - ReloadZone
   - KillZone
+  - Wave
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Wave
   - 
   - 
   - 
