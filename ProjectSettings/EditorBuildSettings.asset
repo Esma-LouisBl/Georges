@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainBubbleFPS.unity
     guid: 43f924b890008e446a1cc9340f9d63a0
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: a801f0b13263a8a4fa8a27b1081516cc
   m_configObjects: {}
