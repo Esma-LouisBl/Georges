@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public int maxhp = 3;
-    public int hp = 3;
+    public float maxhp = 3;
+    public float hp = 3;
     public Transform spawn;
     // Start is called before the first frame update
     void Start()
