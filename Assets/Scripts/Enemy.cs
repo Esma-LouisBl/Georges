@@ -19,13 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private Mission _mission;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (_goForward)

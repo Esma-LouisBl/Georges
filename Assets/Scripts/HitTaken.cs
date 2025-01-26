@@ -27,14 +27,13 @@ public class HitTaken : MonoBehaviour
     public Transform spawner;
 
     private CharacterController characterController;
-    // Start is called before the first frame update
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         _hpImage.sprite = _hpMax;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (knockbackTimer > 0)
