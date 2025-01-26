@@ -20,6 +20,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private GameObject _toy, _riffle;
 
+    [SerializeField]
+    AudioSource _audioSource;
+
     void Start()
     {
         _riffle.SetActive(false);
@@ -58,6 +61,7 @@ public class PlayerShoot : MonoBehaviour
     public void FillCharger()
     {
         StartCoroutine(FillingCharger());
+        _audioSource.Play();
     }
     public IEnumerator FillingCharger()
     {
