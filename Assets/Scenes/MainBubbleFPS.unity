@@ -2478,7 +2478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Roi pas tr\xE8s chouette"
+  m_text: Roi pas tres chouette
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27b64c56e4335de4cb6086cafaf91d77, type: 2}
   m_sharedMaterial: {fileID: -2742029335015786545, guid: 27b64c56e4335de4cb6086cafaf91d77,
