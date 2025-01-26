@@ -31,6 +31,9 @@ public class HitTaken : MonoBehaviour
 
     private CharacterController characterController;
 
+    [SerializeField]
+    private AudioSource _audioSource;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -52,7 +55,8 @@ public class HitTaken : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             if (!_invincible)
-            {
+            {   
+                _audioSource.Play();
 
                 if (playerManager.hp > 1)
                 {
@@ -89,6 +93,7 @@ public class HitTaken : MonoBehaviour
         }
         else if (other.CompareTag("Wave"))
         {
+            _audioSource.Play();
             if (playerManager.hp > 1)
             {
                 knockbackDirection = ((player.transform.position - other.transform.position)*2).normalized;

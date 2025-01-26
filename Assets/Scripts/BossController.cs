@@ -10,6 +10,9 @@ public class BossController : MonoBehaviour
 
     public Transform SpawnOffset;
 
+    [SerializeField]
+    private AudioSource _audioSource;
+
     void Start()
     {
         StartCoroutine(Jump());
@@ -50,6 +53,7 @@ public class BossController : MonoBehaviour
             i -= 1;
         }
         i = 6;
+        _audioSource.Play();
         StartCoroutine(Jump());
         Instantiate(WavePrefab, SpawnOffset.position, SpawnOffset.rotation);
     }
