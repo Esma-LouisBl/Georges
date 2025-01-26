@@ -13,7 +13,7 @@ public class EnemyKing : MonoBehaviour
 
     public void Touched()
     {
-        if (lives > 1)
+        if (lives > 0)
         {
             lives--;
         }
