@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 163179525336823316}
   - component: {fileID: 8130785692857458051}
   - component: {fileID: 6382642372162068411}
-  - component: {fileID: 8886657945914732157}
   - component: {fileID: 4605918706715864232}
+  - component: {fileID: 8015422206477335229}
   m_Layer: 0
   m_Name: ChocWave
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20, y: 1.15, z: 0.0000001391}
-  m_LocalScale: {x: 1.5, y: 0.19681118, z: 1.5}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7781706067338770555}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5076798556035486163, guid: e50c2ce05176d5f4dbb1fb3d6d7ef22b, type: 3}
 --- !u!23 &6382642372162068411
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 6664358993437552698, guid: e50c2ce05176d5f4dbb1fb3d6d7ef22b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,8 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8886657945914732157
-CapsuleCollider:
+--- !u!114 &4605918706715864232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781706067338770555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f787f966f69020640ac26773ede57e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chocWave: {fileID: 7781706067338770555}
+--- !u!64 &8015422206477335229
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,21 +116,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 10.044461
-  m_Direction: 1
-  m_Center: {x: 0.00000003973643, y: 0.245271, z: -0.00000007947286}
---- !u!114 &4605918706715864232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7781706067338770555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f787f966f69020640ac26773ede57e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _chocWave: {fileID: 7781706067338770555}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5076798556035486163, guid: e50c2ce05176d5f4dbb1fb3d6d7ef22b, type: 3}
