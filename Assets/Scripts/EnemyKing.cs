@@ -8,23 +8,18 @@ public class EnemyKing : MonoBehaviour
     private Rigidbody _rb;
 
     [SerializeField]
-    private int _lives = 3;
+    public int lives = 3;
 
-    private bool _goForward = true;
-
-    [SerializeField]
-    private Mission _mission;
 
     public void Touched()
     {
-        if (_lives > 1)
+        if (lives > 1)
         {
-            _lives--;
+            lives--;
         }
         else
         {
             Destroy(gameObject);
-            _mission.tutoGeorges = false;
         }
     }
 }

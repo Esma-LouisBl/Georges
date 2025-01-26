@@ -5,8 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    [SerializeField]
-    private int _lives = 10;
+    public int lives = 10;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,9 +20,9 @@ public class Boss : MonoBehaviour
 
     public void Touched()
     {
-        if (_lives > 1)
+        if (lives > 1)
         {
-            _lives--;
+            lives--;
         }
         else
         {
