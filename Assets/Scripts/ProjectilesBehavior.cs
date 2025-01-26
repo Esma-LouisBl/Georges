@@ -7,6 +7,11 @@ public class ProjectilesBehavior : MonoBehaviour
     private float _speed = 5f; //vitesse de base
     private float _timeTillEnd = 5; //regle la portee/distance avant explosion de la bulle
 
+    //[SerializeField]
+    //private AudioClip _sound;
+    [SerializeField]
+    private AudioSource _source;
+
     private void Start()
     {
         StartCoroutine(TimeToSlow());
@@ -37,6 +42,7 @@ public class ProjectilesBehavior : MonoBehaviour
 
     private void BubbleExplosion()
     {
+        _source.Play();
         Destroy(gameObject);
     }
 }
