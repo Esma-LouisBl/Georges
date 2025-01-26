@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Mission _mission;
 
+    [SerializeField]
+    private GameObject _george;
+
     void Update()
     {
         if (_goForward)
@@ -37,11 +40,13 @@ public class Enemy : MonoBehaviour
         if (collider.gameObject == point1)
         {
             _goForward = false;
+            _george.transform.Rotate(new Vector3(0,180,0), Space.World);
         }
 
         if (collider.gameObject == point2)
         {
             _goForward = true;
+            _george.transform.Rotate(new Vector3(0, 180, 0), Space.World);
         }
     }
 

@@ -21,13 +21,9 @@ public class Enemy4 : MonoBehaviour
     public GameObject point2;
     public GameObject point3;
     public GameObject point4;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    [SerializeField]
+    private GameObject _george;
     void Update()
     {
         if (_goForward)
@@ -54,24 +50,28 @@ public class Enemy4 : MonoBehaviour
         {
             _goForward = false;
             _goRight = true;
+            _george.transform.Rotate(new Vector3(0, 90, 0), Space.World);
         }
 
         if (collision.gameObject == point2)
         {
             _goRight = false;
             _goBack = true;
+            _george.transform.Rotate(new Vector3(0, 90, 0), Space.World);
         }
 
         if (collision.gameObject == point3)
         {
             _goBack = false;
             _goLeft = true;
+            _george.transform.Rotate(new Vector3(0, 90, 0), Space.World);
         }
 
         if (collision.gameObject == point4)
         {
             _goLeft = false;
             _goForward = true;
+            _george.transform.Rotate(new Vector3(0, 90, 0), Space.World);
         }
     }
     public void Touched()
