@@ -24,6 +24,14 @@ public class Enemy4 : MonoBehaviour
 
     [SerializeField]
     private GameObject _george;
+
+    [SerializeField]
+    private AudioSource _audioSource;
+
+    private void Start()
+    {
+        _audioSource.Play();
+    }
     void Update()
     {
         if (_goForward)

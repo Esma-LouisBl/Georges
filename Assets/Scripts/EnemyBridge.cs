@@ -25,10 +25,14 @@ public class EnemyBridge : MonoBehaviour
 
     [SerializeField]
     private GameObject _george;
+
+    [SerializeField]
+    private AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
         _bridge.SetActive(false);
+        _audioSource.Play();
     }
 
     // Update is called once per frame
