@@ -10,13 +10,11 @@ public class BossArea : MonoBehaviour
     private EnemyKing _enemyKing;
     [SerializeField]
     private BoxCollider _area;
-    // Start is called before the first frame update
     void Start()
     {
         _ui.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_enemyKing.lives < 1)
