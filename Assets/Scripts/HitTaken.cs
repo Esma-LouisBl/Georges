@@ -95,7 +95,7 @@ public class HitTaken : MonoBehaviour
 
                 knockbackTimer = knockbackDuration;
 
-                playerManager.hp--;
+                playerManager.hp -= 0.5f;
 
                 if (playerManager.hp == 2)
                 {

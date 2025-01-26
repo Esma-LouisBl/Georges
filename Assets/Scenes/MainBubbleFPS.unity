@@ -4092,7 +4092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 1426080683}
-  lives: 100
+  lives: 75
 --- !u!114 &1426080689
 MonoBehaviour:
   m_ObjectHideFlags: 0
