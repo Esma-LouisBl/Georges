@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2941259214415027797
+--- !u!114 &-6548650458685793575
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Boss
+  m_Name: George
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,11 +41,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: eb2ce2ab22a31ba47b44c11abbe16228, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3188a874fba0456418511e71a247bec6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 14b5752ae09809041bfba130cbe4c3f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 83125b6396a005c428fbdf454fd14518, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -61,15 +61,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: e9d568fa793032c49b2d63bc502cb925, type: 3}
+        m_Texture: {fileID: 2800000, guid: a8ae500721e6c974f96b15a1e0a80dec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: eb2ce2ab22a31ba47b44c11abbe16228, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3188a874fba0456418511e71a247bec6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 7151a5fbb1bd3b549845f4bf56d81c1c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 69c6251327c1d7045a721ffc29ddac90, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -77,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 934e873ea707017468b5d945d9b87b6f, type: 3}
+        m_Texture: {fileID: 2800000, guid: a2108b69ba118cb4780a48a85904a1d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
