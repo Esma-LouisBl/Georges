@@ -1826,7 +1826,7 @@ MonoBehaviour:
   lookXLimit: 60
   defaultHeight: 2
   crouchHeight: 1
-  crouchSpeed: 3
+  crouchSpeed: 1.5
   _playershoot: {fileID: 541839158}
 --- !u!143 &712677438
 CharacterController:
